@@ -49,6 +49,8 @@ public class AsteroidControlSystem implements IEntityProcessingService {
         PositionPart positionPart = entity.getPart(PositionPart.class);
         float x = positionPart.getX();
         float y = positionPart.getY();
+        float radians = positionPart.getRadians();
+
 
         double angleStep = Math.PI * 2 / numberOfNodes;
         Polygon shape = new Polygon();
@@ -57,18 +59,18 @@ public class AsteroidControlSystem implements IEntityProcessingService {
 
 
 //        entity.setRadius(20);
+
+//        shapex[0] = (float) (x + Math.cos(radians) * 12);
+//        shapey[0] = (float) (y + Math.sin(radians) * 8);
 //
-//        shapex[0] = (float) (x + 45);
-//        shapey[0] = (float) (y + 66);
+//        shapex[1] = (float) (x + Math.cos(radians - 4 * 3.1415f / 5) * 8);
+//        shapey[1] = (float) (y + Math.sin(radians - 4 * 3.1145f / 5) * 8);
 //
-//        shapex[1] = (float) (x + 76);
-//        shapey[1] = (float) (y + 78);
+//        shapex[2] = (float) (x + Math.cos(radians + 3.1415f) * 5);
+//        shapey[2] = (float) (y + Math.sin(radians + 3.1415f) * 5);
 //
-//        shapex[2] = (float) (x + 58);
-//        shapey[2] = (float) (y + 46);
-//
-//        shapex[3] = (float) (x + 67);
-//        shapey[3] = (float) (y + 87);
+//        shapex[3] = (float) (x + Math.cos(radians + 4 * 3.1415f / 5) * 8);
+//        shapey[3] = (float) (y + Math.sin(radians + 4 * 3.1415f / 5) * 8);
 
         for(int i = 0; i < numberOfNodes; ++i) {
             double targetAngle = angleStep * i; // This is the angle we want if all parts are equally spaced
